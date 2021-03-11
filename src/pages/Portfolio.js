@@ -1,9 +1,9 @@
 import React from "react";
 import Chart from "../components/Chart";
-import Eventlog from "../components/Eventlog";
+// import Eventlog from "../components/Eventlog";
 import Graph from "../components/Graph";
 import Header from "../components/Header";
-import Holdings from "../components/Holdings";
+// import Holdings from "../components/Holdings";
 import Performance from "../components/Performance";
 import List from "../components/List";
 

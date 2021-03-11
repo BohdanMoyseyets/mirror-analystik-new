@@ -3,9 +3,11 @@ import style from "./Chart.module.css";
 import LineGraph from "./LineGraph";
 import { Line } from 'react-chartjs-2';
 
+
 const Chart = (props) => {
+  // Line.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
   const data = {
-    labels: ["May", "Jun", "Jun", "Jul", "Jul", "Aug", "Sep", "Sep", "Oct", "Oct", "Nov", "Nov", "Dec", "Dec", "Jan", "Jan"],
+    labels: ["", "May", "Jun", "Jun", "Jul", "Jul", "Aug", "Sep", "Sep", "Oct", "Oct", "Nov", "Nov", "Dec", "Dec", "Jan", "Jan"],
     datasets: [
       {
         label: "Percent",
@@ -27,14 +29,18 @@ const Chart = (props) => {
         pointRadius: 1,
         pointHitRadius: 10,
         fontColor: '#000',
-        data: [20, 20, 30, 35, 40, 40, 40, 40, 40, 40, 30, 20, 40, 50, 60, 80],
+        data: ["",20, 20, 30, 35, 40, 40, 40, 40, 40, 40, 30, 20, 40, 50, 60, 80],
         
     options: {
       scales: {
-        y: { // defining min and max so hiding the dataset does not change scale range
-          min: 0,
-          max: 100
-        }
+        xAxes: [{
+          display: false
+        }],
+        yAxes: [{
+          type: "linear",
+          display: true,
+          position: "left"
+        }]
       },
       plugins: {
           legend: {
@@ -70,39 +76,12 @@ const Chart = (props) => {
         </div>
       </div>
       <div className={style.content}>
-        <div className={style.line_y}>
-          <div>70%</div>
-          <div>60%</div>
-          <div>50%</div>
-          <div>40%</div>
-          <div>30%</div>
-          <div>20%</div>
-          <div>10%</div>
-        </div>
         <div className={style.line}>
-          <Line data={data} width={"1000px"} height={"350px"} font-size={"30px"} />
-          {/* <LineGraph /> */}
+          {/* <Line data={data} width={"1000px"} height={"350px"} font-size={"30px"} /> */}
+          <LineGraph width={"1000px"} height={"350px"}/>
         </div>
       </div>
-      <div className={style.line_x}>
-        <div>May</div>
-        <div>Jun</div>
-        <div>Jun</div>
-        <div>Jul</div>
-        <div>Jul</div>
-        <div>Aug</div>
-        <div>Sep</div>
-        <div>Sep</div>
-        <div>Oct</div>
-        <div>Oct</div>
-        <div>Nov</div>
-        <div>Nov</div>
-        <div>Dec</div>
-        <div>Dec</div>
-        <div>Jan</div>
-        <div>Jan</div>
-      </div>
-    </div>
+    </div> 
   );
 };
 export default Chart;

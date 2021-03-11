@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import Chart from "chart.js";
 import classes from "./LineGraph.module.css";
+Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.defaultFontColor = '#A9AEB8';
+Chart.defaults.global.defaultFontSize = 12;
+Chart.defaults.global.defaultFontStyle = '600';
+Chart.defaults.global.defaultFontLineHeight = 15;
+
 
 export default class LineGraph extends Component {
     chartRef = React.createRef();
@@ -15,7 +22,7 @@ export default class LineGraph extends Component {
                 labels: ["May", "Jun", "Jun", "Jul", "Jul", "Aug","Sep","Sep","Oct","Oct","Nov","Nov","Dec", "Dec", "Jan", "Jan" ],
                 datasets: [
                     {
-                        label: "aaaa",
+                        label: "Percent",
                         fill: false,
                         lineTension: 0.5,
                         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -33,28 +40,40 @@ export default class LineGraph extends Component {
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,
                         pointHitRadius: 10,
-                        data: [20, 20, 30, 35, 40, 40 , 40 , 40, 40, 40, 30, 20, 40,  50, 60, 80],
+                        data: ["0%","20%", "20%", "30%", "30%", "40%", "40%"  , "40%", "40%", "40%", "30%", "20%", "40%",  "50%", "60%", "80%"],
                     }
                 ]
             },
             options: {
-                scales: {
-                    y: { // defining min and max so hiding the dataset does not change scale range
-                      min: 0,
-                      max: 100
-                    }
-                  },
                 plugins: {
                     legend: {
                         labels: {
                             // This more specific font property overrides the global property
                             font: {
-                                size: 30
+                                size: 40
                             }
                         }
                     }
-                }
-            }
+                },
+                scales: {
+                  xAxes: [{
+                    display: true,
+                   
+                  }],
+                  yAxes: [{
+                    type: 'category',
+                    labels: ['100%', '90%', '80%', '70%', '60%', '50%', '40%', '30%', '20%', '10%', '0%'],
+                    // type: "linear",
+                    ticks: {
+                        min: '100%',
+                        max: '0%'
+                    },
+                    display: true,
+                    position: "left"
+                  }]
+                },
+                responsive: true
+              }
         });
     }
     render() {

@@ -1,0 +1,95 @@
+.chart{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background: #0D0F14;
+    border-radius: 5px;
+    padding: 29px 44px 22px 47px;
+    margin-bottom: 41px;
+    height: 480px;
+}
+.head{
+    display: flex;
+    
+}
+
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #A9AEB8;
+    margin-right: 50px;
+}
+.date {
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+}
+.date div{
+    margin-right: 20px;
+}
+.active{
+    border-bottom: 1px solid #F26C4F;
+}
+.content{
+    display: flex;
+    margin-top: 30px;
+    height: auto;
+    box-sizing: border-box;
+}
+.chartjs-size-monitor{
+    position: relative;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+    height: auto;
+}
+.chartjs-render-monitor{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;height: 500px;
+}
+.line{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+    height: 100%;
+    width: 100%;
+
+}
+.line_y div {
+    margin-bottom: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+}
+.line_x {
+    margin-left: 100px;
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+}
+.line_x div{
+    margin-right: 20px;
+}

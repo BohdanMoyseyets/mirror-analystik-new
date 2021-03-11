@@ -1,0 +1,64 @@
+.graphContainer{
+    
+    height: 400px;
+}
+#myChart{
+    width: 100%;
+    height: 400px;
+}
+
+.head{
+    display: flex;
+    
+}
+
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #A9AEB8;
+    margin-right: 50px;
+}
+.date {
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+}
+.date div{
+    margin-right: 20px;
+}
+.active{
+    border-bottom: 1px solid #F26C4F;
+}
+.content{
+    display: flex;
+    margin-top: 30px;
+}
+.line_y div {
+    margin-bottom: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+}
+.line_x {
+    margin-left: 100px;
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A9AEB8;
+}
+.line_x div{
+    margin-right: 20px;
+}

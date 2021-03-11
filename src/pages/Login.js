@@ -1,9 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import style from "./Login.module.css";
 import logo_login from "../images/logo_login.png";
+import history from '../history';
+
+const session = window.sessionStorage;
 
 const Login = (props) => {
+  const [input, setInput] = useState("");
+
+  // On login form submit
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const isAddress = input.slice(0, 5).toLowerCase() === "terra" ? true : false;
+    if (isAddress) {
+      setInput('');
+      session.setItem('address', input);
+      history.push('/portfolio');
+      return;
+    }
+    alert('Error! Address should start from `terra`!')
+  };
+
   return (
     <div className={style.login}>
       <div className={style.round}></div>
@@ -15,14 +32,19 @@ const Login = (props) => {
         Actionable insights to improve your trading and <br />
         discover strategies that work.
       </div>
-      <div className={style.form_block}>
+      <form onSubmit={(e) => onSubmit(e)} className={style.form_block}>
         <div className={style.input}>
-          <input type="text" placeholder="enter Mirror wallet" />
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="enter Mirror wallet"
+          />
         </div>
-        <Link to="/portfolio" style={{ textDecoration: "none" }}>
-          <div className={style.button}>Lookup</div>
-        </Link>
-      </div>
+        <button type="submit" className={style.button}>
+          Lookup
+        </button>
+      </form>
     </div>
   );
 };

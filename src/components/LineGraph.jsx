@@ -29,6 +29,7 @@ export default class LineGraph extends Component {
                         borderColor: '#F26C4F',
                         borderCapStyle: 'butt',
                         borderDash: [],
+                        gridLineColor:  "red",
                         borderDashOffset: 0.0,
                         borderJoinStyle: 'miter',
                         pointBorderColor: '#F26C4F',
@@ -57,6 +58,10 @@ export default class LineGraph extends Component {
                 },
                 scales: {
                   xAxes: [{
+                    gridLines: {
+                        color: "#1B1E25",
+                        borderDash: [2, 2],
+                    },
                     display: true,
                    
                   }],
@@ -67,6 +72,10 @@ export default class LineGraph extends Component {
                     ticks: {
                         min: '100%',
                         max: '0%'
+                    },
+                    gridLines: {
+                        color: "#1B1E25",
+                        borderDash: [2, 2],
                     },
                     display: true,
                     position: "left"

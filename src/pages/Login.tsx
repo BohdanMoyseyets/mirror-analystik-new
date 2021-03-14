@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, FC, FormEvent } from "react";
 import style from "./Login.module.css";
 import logo_login from "../images/logo_login.png";
 import history from '../history';
 
 const session = window.sessionStorage;
 
-const Login = (props) => {
+const Login: FC = (props) => {
   const [input, setInput] = useState("");
 
   // On login form submition
-  const onSubmit = (e) => {
+  const onSubmit = (e: FormEvent) => {
     e.preventDefault();
     const isAddress = input.slice(0, 5).toLowerCase() === "terra" ? true : false;
     if (isAddress) {
@@ -18,7 +18,7 @@ const Login = (props) => {
       history.push('/portfolio');
       return;
     }
-    alert('Error! Address should start from `terra`!')
+    alert('Invalid Terra address!')
   };
 
   return (

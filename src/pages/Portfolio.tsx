@@ -48,7 +48,7 @@ const Portfolio = () => {
       />
       <Graph />
       {/* <Eventlog /> */}
-      <List title="Event Log" columns={eventColumns} rows={eventRows} />
+      <List title="Event Log" columns={eventColumns} rows={eventRows} subTitle={null} span={null} />
     </>
   );
 };

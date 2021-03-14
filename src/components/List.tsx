@@ -1,8 +1,16 @@
-import React from "react";
+import React, {FC} from "react";
 import style from "./Eventlog.module.css";
 import style2 from "./Holdings.module.css";
 
-const List = ({ title, columns, rows, subTitle = null, span = null }) => {
+interface Props {
+  title: string,
+  columns: string[],
+  rows: string[][],
+  subTitle: string | null,
+  span: string | null,
+}
+
+const List: FC<Props> = ({ title, columns, rows, subTitle = null, span = null }) => {
   // Render subTitle
   const renderSubTitle = () => {
     if (!subTitle) return;

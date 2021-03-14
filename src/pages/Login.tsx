@@ -1,5 +1,5 @@
 import React, { useState, FC, FormEvent } from "react";
-import style from "./Login.module.css";
+import style from "./Login.module.scss";
 import logo_login from "../images/logo_login.png";
 import history from '../history';
 
@@ -29,7 +29,7 @@ const Login: FC = (props) => {
       </div>
       <div className={style.title}>Data Driven Trading Analytics</div>
       <div className={style.sub_title}>
-        Actionable insights to improve your trading and <br />
+        Actionable insights to improve your trading and
         discover strategies that work.
       </div>
       <form onSubmit={(e) => onSubmit(e)} className={style.form_block}>

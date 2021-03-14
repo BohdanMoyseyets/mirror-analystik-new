@@ -1,6 +1,6 @@
 import React, {FC} from "react";
-import style from "./Eventlog.module.css";
-import style2 from "./Holdings.module.css";
+import style from "./Eventlog.module.scss";
+import style2 from "./Holdings.module.scss";
 
 interface Props {
   title: string,

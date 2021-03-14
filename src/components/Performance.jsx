@@ -1,6 +1,7 @@
 import React from "react";
-import style from "./Performance.module.css";
+import style from "./Performance.module.scss";
 import info_img from "./../images/info_img.png";
+import ReactTooltip from 'react-tooltip'
 
 const session = window.sessionStorage;
 
@@ -18,7 +19,8 @@ const Performance = (props) => {
           <div>
             <span className={style.block_name}>Performance</span>
             <span className={style.info_icon}>
-              <img src={info_img} alt="" />
+              <img  data-tip='Total value of all Performance' src={info_img} alt="" />
+              <ReactTooltip type="light"  place="top" />
             </span>
           </div>
           <div className={style.block_text}>10%</div>
@@ -27,7 +29,8 @@ const Performance = (props) => {
           <div>
             <span className={style.block_name}>Equity</span>
             <span className={style.info_icon}>
-              <img src={info_img} alt="" />
+              <img data-tip='Total value of all Equity' src={info_img} alt="" />
+              <ReactTooltip type="light"  place="top" />
             </span>
           </div>
           <div className={style.block_text}>25,251 UST</div>
@@ -36,7 +39,8 @@ const Performance = (props) => {
           <div>
             <span className={style.block_name}>Trades Profitable</span>
             <span className={style.info_icon}>
-              <img src={info_img} alt="" />
+              <img data-tip='Total value of all Trades Profitable' src={info_img} alt="" />
+              <ReactTooltip type="light"  place="top" />
             </span>
           </div>
           <div className={style.block_text}>98</div>
@@ -45,7 +49,8 @@ const Performance = (props) => {
           <div>
             <span className={style.block_name}>Daily PNL</span>
             <span className={style.info_icon}>
-              <img src={info_img} alt="" />
+              <img data-tip='Total value of all Daily PNL' src={info_img} alt="" />
+              <ReactTooltip type="light"  place="top" />
             </span>
           </div>
           <div className={style.block_text}>+0.1%</div>

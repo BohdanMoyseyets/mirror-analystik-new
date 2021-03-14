@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Eventlog.module.css';
+import style from './Eventlog.module.scss';
 
 
 const Eventlog = (props) => {

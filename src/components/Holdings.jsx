@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Holdings.module.css';
+import style from './Holdings.module.scss';
 
 
 const Holdings = (props) => {

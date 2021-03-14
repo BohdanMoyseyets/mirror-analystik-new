@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Chart from "chart.js";
-import classes from "./LineGraph.module.css";
+import classes from "./LineGraph.module.scss";
 Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.defaultFontColor = '#A9AEB8';

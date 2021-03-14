@@ -1,0 +1,110 @@
+@mixin font_family {  
+    font-family: Montserrat;
+    font-style: normal;
+}
+
+@mixin color {  
+    color: #A9AEB8;
+}
+
+.performance{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2D323E;
+    box-sizing: border-box;
+    div {
+        @include font_family;
+        @include color;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 27px;
+    }
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    padding: 42px 0;
+}
+.block {
+    width: 265px;
+    border: 1px solid #2D323E;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 17px 30px;
+}
+.block_name {
+    @include font_family;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    @include color;
+}
+.info_icon{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.block_text {
+    @include font_family;
+    @include color;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+@media(max-width:420px){
+    .content{
+        flex-wrap: wrap;
+        width: 100%;
+        height: 450px;
+        flex-direction: column;
+        justify-content: space-between;
+        .block{
+            width: 100%;
+        }
+    }
+}
+
+@media(min-width:421px) and (max-width:576px){
+    .content{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 450px;
+        justify-content: center;
+        align-content: space-between;
+        .block{
+            width: 300px;
+        }
+    }
+}
+
+@media(min-width:577px) and (max-width:991px){
+    .content{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 200px;
+        justify-content: space-between;
+        align-content: space-between;
+        .block{
+            width: 46%;
+        }
+    }
+}
+
+@media(min-width:992px) and (max-width:1200px){
+    .content{
+        flex-direction: row;
+        width: 100%;
+        height: 100px;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+}

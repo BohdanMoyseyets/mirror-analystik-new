@@ -3,7 +3,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import history from "./history";
 import Portfolio from "./pages/Portfolio";
 import Login from "./pages/Login";
-import "./App.css";
+import "./App.scss";
 import React from "react";
 
 const session = window.sessionStorage;

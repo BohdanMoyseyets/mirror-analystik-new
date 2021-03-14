@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Graph.module.css';
+import style from './Graph.module.scss';
 import { PieChart } from 'react-minimal-pie-chart';
 
 

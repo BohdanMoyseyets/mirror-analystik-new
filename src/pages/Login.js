@@ -8,7 +8,7 @@ const session = window.sessionStorage;
 const Login = (props) => {
   const [input, setInput] = useState("");
 
-  // On login form submit
+  // On login form submition
   const onSubmit = (e) => {
     e.preventDefault();
     const isAddress = input.slice(0, 5).toLowerCase() === "terra" ? true : false;

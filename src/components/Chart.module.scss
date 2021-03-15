@@ -1,90 +1,91 @@
-@mixin font_family {  
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
+@mixin font_family {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
 }
 
-@mixin color {  
-    color: #A9AEB8;
+@mixin color {
+	color: #a9aeb8;
 }
 
-.chart{
-    margin-left: 2rem;
-    margin-right: 2rem;
-    background: #0D0F14;
-    border-radius: 5px;
-    padding: 29px 44px 22px 47px;
-    margin-bottom: 41px;
-    height: auto;
+.chart {
+	margin-left: 2rem;
+	margin-right: 2rem;
+	background: #0d0f14;
+	border-radius: 5px;
+	padding: 29px 44px 22px 47px;
+	margin-bottom: 41px;
+	height: auto;
 }
-.head{
-    display: flex;
-    
+.head {
+	display: flex;
 }
 
 .title {
-    @include font_family;
-    @include color;
-    font-size: 18px;
-    line-height: 22px;
-    margin-right: 50px;
+	@include font_family;
+	@include color;
+	font-size: 18px;
+	line-height: 22px;
+	margin-right: 50px;
 }
 .date {
-    display: flex;
-    @include font_family;
-    font-size: 12px;
-    line-height: 15px;
-    @include color;
-    div{
-        margin-right: 20px;
-    }
+	display: flex;
+	@include font_family;
+	font-size: 12px;
+	line-height: 15px;
+	@include color;
+	div {
+		margin-right: 20px;
+	}
 }
-.active{
-    border-bottom: 1px solid #F26C4F;
+.ranges {
+	user-select: none;
+	cursor: pointer;
 }
-.content{
-    display: flex;
-    margin-top: 30px;
-    height: auto;
-    box-sizing: border-box;
+.active {
+	border-bottom: 1px solid #f26c4f;
 }
-.line{
-    @include font_family;
-    font-size: 12px;
-    line-height: 15px;
-    @include color;
-    height: 100%;
-    width: 100%;
-
+.content {
+	display: flex;
+	margin-top: 30px;
+	height: auto;
+	box-sizing: border-box;
 }
-
-@media(max-width:576px){
-    .chart{
-        margin-left: 2rem;
-        margin-right: 2rem;
-        background: #0D0F14;
-        border-radius: 5px;
-        padding: 2px;
-        margin-bottom: 41px;
-        height: auto;
-    }
-    .head{
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-    }
-    .title {
-        margin-right: 0;
-        text-align: center;
-    }
-    .date {
-        margin-top: 10px;
-        display: flex;
-       justify-content: space-around;
-       div{
-           margin-right: 0;
-       }
-    }
+.line {
+	@include font_family;
+	font-size: 12px;
+	line-height: 15px;
+	@include color;
+	height: 100%;
+	width: 100%;
 }
 
+@media (max-width: 576px) {
+	.chart {
+		margin-left: 2rem;
+		margin-right: 2rem;
+		background: #0d0f14;
+		border-radius: 5px;
+		padding: 2px;
+		margin-bottom: 41px;
+		height: auto;
+	}
+	.head {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+	}
+	.title {
+		margin-right: 0;
+		text-align: center;
+	}
+	.date {
+		margin-top: 10px;
+		display: flex;
+		justify-content: space-around;
+		div {
+			margin-right: 0;
+		}
+	}
+}

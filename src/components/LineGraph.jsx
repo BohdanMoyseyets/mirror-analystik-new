@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import Chart from "chart.js";
 import classes from "./LineGraph.module.scss";
 Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
@@ -9,24 +9,21 @@ Chart.defaults.global.defaultFontStyle = '600';
 Chart.defaults.global.defaultFontLineHeight = 15;
 
 
-export default class LineGraph extends Component {
-	constructor(props) {
-		super(props);
-		this.chosenRange = this.props.chosenRange
-	}
-
-	chartRef = React.createRef();
 
 
+export default function LineGraph({ axisX = [], axisY = [] }) {
 
-	componentDidMount() {
-		const myChartRef = this.chartRef.current.getContext("2d");
+	const chartRef = React.createRef();
+
+
+	useEffect(() => {
+		const myChartRef = chartRef.current.getContext("2d");
 
 		new Chart(myChartRef, {
 			type: "line",
 			data: {
 				//Bring in data
-				labels: ["May", "Jun", "Jun", "Jul", "Jul", "Aug", "Sep", "Sep", "Oct", "Oct", "Nov", "Nov", "Dec", "Dec", "Jan", "Jan"],
+				labels: axisX,
 				datasets: [
 					{
 						label: "Percent",
@@ -48,7 +45,7 @@ export default class LineGraph extends Component {
 						pointHoverBorderWidth: 2,
 						pointRadius: 1,
 						pointHitRadius: 10,
-						data: ["0%", "20%", "20%", "30%", "30%", "40%", "40%", "40%", "40%", "40%", "30%", "20%", "40%", "50%", "60%", "80%"],
+						data: axisY,
 					}
 				]
 			},
@@ -91,15 +88,18 @@ export default class LineGraph extends Component {
 				responsive: true
 			}
 		});
-	}
-	render() {
-		return (
-			<div className={classes.graphContainer}>
-				<canvas
-					id="myChart"
-					ref={this.chartRef}
-				/>
-			</div>
-		)
-	}
+
+
+	}, [axisY, axisX])
+
+	console.log(" LineGraph ", axisY, axisX)
+
+	return (
+		<div className={classes.graphContainer} >
+			<canvas
+				id="myChart"
+				ref={chartRef}
+			/>
+		</div>
+	)
 }

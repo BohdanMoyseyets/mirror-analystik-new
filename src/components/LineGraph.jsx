@@ -90,9 +90,9 @@ export default function LineGraph({ axisX = [], axisY = [] }) {
 		});
 
 
-	}, [axisY, axisX])
+	}, [axisY, axisX, chartRef])
 
-	console.log(" LineGraph ", axisY, axisX)
+	// console.log(" LineGraph ", axisY, axisX)
 
 	return (
 		<div className={classes.graphContainer} >

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, FC } from "react";
 import Chart from "chart.js";
 import classes from "./LineGraph.module.scss";
 
-
 Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
 // Chart.defaults.global.legend.display = false;
 Chart.defaults.global.defaultFontColor = "#A9AEB8";
@@ -10,19 +9,18 @@ Chart.defaults.global.defaultFontSize = 12;
 Chart.defaults.global.defaultFontStyle = "600";
 // Chart.defaults.global.defaultFontLineHeight = 15;
 
-
 interface Props {
   width: string;
   height: string;
   axisX: string[];
-  axisY: string[];
+  axisY: number[];
 }
 
 const LineGraph: FC<Props> = ({ axisX, axisY }) => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
-  const ctx = new CanvasRenderingContext2D();
+  const chartRef = useRef<any>(null);
 
   useEffect(() => {
+    const ctx = chartRef.current?.getContext("2d");
 
     new Chart(ctx, {
       type: "line",
@@ -38,7 +36,7 @@ const LineGraph: FC<Props> = ({ axisX, axisY }) => {
             borderColor: "#F26C4F",
             borderCapStyle: "butt",
             borderDash: [],
-            gridLineColor: "red",
+            // gridLineColor: "red",
             borderDashOffset: 0.0,
             borderJoinStyle: "miter",
             pointBorderColor: "#F26C4F",

@@ -4,41 +4,23 @@ import LineGraph from "./LineGraph";
 
 const ranges = ["ALL", "1D", "1W", "1M", "3M", "6M"];
 const percents = [
-  0,
-  20,
-  20,
-  30,
-  30,
-  40,
-  40,
-  40,
-  40,
-  40,
-  30,
-  20,
-  40,
-  50,
-  60,
-  80,
+  "0%",
+  "20%",
+  "20%",
+  "30%",
+  "30%",
+  "40%",
+  "40%",
+  "40%",
+  "40%",
+  "40%",
+  "30%",
+  "20%",
+  "40%",
+  "50%",
+  "60%",
+  "80%",
 ];
-// const percents = [
-//   "0%",
-//   "20%",
-//   "20%",
-//   "30%",
-//   "30%",
-//   "40%",
-//   "40%",
-//   "40%",
-//   "40%",
-//   "40%",
-//   "30%",
-//   "20%",
-//   "40%",
-//   "50%",
-//   "60%",
-//   "80%",
-// ];
 const months = [
   "May",
   "Jun",
@@ -63,7 +45,7 @@ const day = ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "24:00"];
 
 const Chart: FC = () => {
   const [chosenRange, setChosenRange] = useState<string>("ALL");
-  const [axisY, setAxisY] = useState<number[]>(percents);
+  const [axisY, setAxisY] = useState<any>(percents);
   const [axisX, setAxisX] = useState<string[]>(months);
 
   const rangeHandler = (e: any) => {

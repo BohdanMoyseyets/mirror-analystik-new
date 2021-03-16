@@ -6,7 +6,7 @@ interface Props {
   width: string;
   height: string;
   axisX: string[];
-  axisY: number[];
+  axisY: any;
 }
 
 Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
@@ -20,10 +20,7 @@ const LineGraph: FC<Props> = ({ axisX, axisY }) => {
   const chartRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const ctx = chartRef.current?.getContext("2d");
-    if (ctx === null || ctx === undefined) {
-      return console.log("Ctx is null || undefined");
-    }
+    const ctx: any = chartRef.current?.getContext("2d");
 
     new Chart(ctx, {
       type: "line",

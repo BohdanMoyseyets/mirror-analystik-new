@@ -1,4 +1,4 @@
-import React, { useEffect, useState, MouseEvent, FC } from "react";
+import React, { useEffect, useState, FC } from "react";
 import style from "./Chart.module.scss";
 import LineGraph from "./LineGraph";
 

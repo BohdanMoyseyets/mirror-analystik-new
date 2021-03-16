@@ -2,13 +2,6 @@ import React, { useEffect, useRef, FC } from "react";
 import Chart from "chart.js";
 import classes from "./LineGraph.module.scss";
 
-Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
-// Chart.defaults.global.legend.display = false;
-Chart.defaults.global.defaultFontColor = "#A9AEB8";
-Chart.defaults.global.defaultFontSize = 12;
-Chart.defaults.global.defaultFontStyle = "600";
-// Chart.defaults.global.defaultFontLineHeight = 15;
-
 interface Props {
   width: string;
   height: string;
@@ -16,11 +9,21 @@ interface Props {
   axisY: number[];
 }
 
+Chart.defaults.global.defaultFontFamily = "'Montserrat', sans-serif";
+// Chart.defaults.global.legend.display = false;
+Chart.defaults.global.defaultFontColor = "#A9AEB8";
+Chart.defaults.global.defaultFontSize = 12;
+Chart.defaults.global.defaultFontStyle = "600";
+// Chart.defaults.global.defaultFontLineHeight = 15;
+
 const LineGraph: FC<Props> = ({ axisX, axisY }) => {
-  const chartRef = useRef<any>(null);
+  const chartRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const ctx = chartRef.current?.getContext("2d");
+    if (ctx === null || ctx === undefined) {
+      return console.log("Ctx is null || undefined");
+    }
 
     new Chart(ctx, {
       type: "line",
@@ -55,6 +58,9 @@ const LineGraph: FC<Props> = ({ axisX, axisY }) => {
       options: {
         plugins: {
           legend: {
+            display: false,
+            defaultFontLineHeight: 15,
+            gridLineColor: "red",
             labels: {
               // This more specific font property overrides the global property
               font: {

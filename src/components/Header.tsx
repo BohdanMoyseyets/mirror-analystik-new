@@ -3,7 +3,7 @@ import style from './Header.module.scss'
 import logo from './../images/logo.png';
 
 
-const Header = (props) => {
+const Header = () => {
 
     return (
         <div className={style.header+ " " + style.padd}>

@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Eventlog.module.scss';
 
 
-const Eventlog = (props) => {
+const Eventlog = () => {
 
     return (
         <div className={style.event}>

@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip'
 
 const session = window.sessionStorage;
 
-const Performance = (props) => {
+const Performance = () => {
   const address = session.getItem('address') || 'terra1n6tx...kv2kuc';
 
   return (

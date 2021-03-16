@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Holdings.module.scss';
 
 
-const Holdings = (props) => {
+const Holdings = () => {
 
     return (
         <div className={style.hold}>

@@ -3,7 +3,7 @@ import style from './Graph.module.scss';
 import { PieChart } from 'react-minimal-pie-chart';
 
 
-const Graph = (props) => {
+const Graph = () => {
 
     return (
         <div className={style.graph}>

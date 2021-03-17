@@ -1,184 +1,197 @@
-@mixin font_family {  
-    font-family: Montserrat;
-    font-style: normal;
+@mixin font_family {
+	font-family: Montserrat;
+	font-style: normal;
 }
 
-@mixin color {  
-    color: #A9AEB8;
+@mixin color {
+	color: #a9aeb8;
 }
-@mixin styles {  
-    height: 27px;
-    width: 27px;
-    border-radius: 50%;
-    margin-right: 11px;
+@mixin styles {
+	height: 27px;
+	width: 27px;
+	border-radius: 50%;
+	margin-right: 11px;
 }
 
 .graph {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 43px;
-    display: flex;
-    height: 460px;
-    justify-content: space-between;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 43px;
+	display: flex;
+	height: 460px;
+	justify-content: space-between;
 }
 .left {
-    background: #0D0F14;
-    border-radius: 5px;
-    width: 48%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+	background: #0d0f14;
+	border-radius: 5px;
+	width: 48%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
-.center_round{
-    position: absolute;
-    height: 218px;
-    width: 218px;
-    background: #0D0F14;
-    z-index: 1;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.center_round {
+	position: absolute;
+	height: 218px;
+	width: 218px;
+	background: #0d0f14;
+	z-index: 1;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .center_round_name {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #A9AEB8;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	color: #a9aeb8;
 }
-.round{
-    position: relative;
-    height: 272px;
-    width: 272px;
+.round {
+	position: relative;
+	height: 272px;
+	width: 272px;
+	padding: 20px 0;
 }
 .list {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #A9AEB8;
+	padding: 20px 0;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: #a9aeb8;
 }
-.block_1, .block_2, .block_3, .block_4{
-    display: flex;
-    align-items: center;
-    margin-bottom: 13px;
+.block_1,
+.block_2,
+.block_3,
+.block_4 {
+	display: flex;
+	align-items: center;
+	margin-bottom: 13px;
+	width: 100px;
 }
-.block_1 div{
-    background: #CC6751;
-    @include styles;
-}
-
-.block_2 div{
-    background: #A69F61;
-    @include styles;
-}
-
-.block_3 div{
-    background:  #6170A6;
-    @include styles;
+.block_1 div {
+	background: #cc6751;
+	@include styles;
 }
 
-.block_4 div{
-    background: #A66161;
-    @include styles;
+.block_2 div {
+	background: #a69f61;
+	@include styles;
+}
+
+.block_3 div {
+	background: #6170a6;
+	@include styles;
+}
+
+.block_4 div {
+	background: #a66161;
+	@include styles;
 }
 .right {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	width: 48%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 .info {
-    background: #0D0F14;
-    border-radius: 5px;
+	background: #0d0f14;
+	border-radius: 5px;
 }
 .info:first-child {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 28px;
-    padding-right: 36px;
-    border-bottom: 1px solid #2D323E;
-    height: 52px;
-    @include font_family;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #A9AEB8;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 28px;
+	padding-right: 36px;
+	border-bottom: 1px solid #2d323e;
+	height: 52px;
+	@include font_family;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: #a9aeb8;
 }
 .row:last-child {
-    border-bottom: none;
-   
+	border-bottom: none;
 }
 
-@media(max-width:576px){
-    .graph{
-        height: auto;
-        flex-direction: column;
-    }
-    .left{
-        width: 100%;
-        flex-direction: column;
-    }
-    .round{
-        height: 272px;
-        width: 272px;
-    }
-    .list{
-        padding: 5px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .right {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
+@media (max-width: 576px) {
+	.graph {
+		height: auto;
+		flex-direction: column;
+	}
+	.left {
+		width: 100%;
+		flex-direction: column;
+	}
+	.round {
+		height: 272px;
+		width: 272px;
+	}
+	.list {
+		padding: 5px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.right {
+		margin-top: 10px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+@media (max-width: 576px) {
+	.graph {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+	.list {
+		padding: 15px;
+	}
 }
 
-@media(min-width:577px) and (max-width:991px){
-    .graph{
-        height: auto;
-        flex-direction: column;
-    }
-    .left{
-        width: 100%;
-        flex-direction: column;
-    }
-    .round{
-        height: 272px;
-        width: 272px;
-    }
-    .list{
-        padding: 5px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .right {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .info {
-       width: 48%;
-    }
-    .info:first-child {
-        margin-bottom: 0px;
-    }
+@media (min-width: 577px) and (max-width: 991px) {
+	.graph {
+		height: auto;
+		flex-direction: column;
+	}
+	.left {
+		width: 100%;
+		flex-direction: column;
+		padding: 10px 0;
+	}
+	.round {
+		height: 272px;
+		width: 272px;
+	}
+	.list {
+		padding: 5px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.right {
+		margin-top: 10px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.info {
+		width: 48%;
+	}
+	.info:first-child {
+		margin-bottom: 0px;
+	}
 }
-

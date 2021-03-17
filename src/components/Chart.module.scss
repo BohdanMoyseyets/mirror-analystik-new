@@ -19,6 +19,8 @@
 }
 .head {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .title {
@@ -30,20 +32,30 @@
 }
 .date {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	@include font_family;
 	font-size: 12px;
 	line-height: 15px;
 	@include color;
 	div {
-		margin-right: 20px;
+		margin-right: 25px;
 	}
 }
 .ranges {
 	user-select: none;
 	cursor: pointer;
+	text-align: center;
+	line-height: 22px;
+	width: 30px;
 }
 .active {
 	border-bottom: 1px solid #f26c4f;
+	user-select: none;
+	cursor: pointer;
+	line-height: 22px;
+	text-align: center;
+	width: 30px;
 }
 .content {
 	display: flex;
@@ -62,8 +74,8 @@
 
 @media (max-width: 576px) {
 	.chart {
-		margin-left: 2rem;
-		margin-right: 2rem;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 		background: #0d0f14;
 		border-radius: 5px;
 		padding: 2px;
@@ -75,6 +87,7 @@
 		flex-direction: column;
 		align-content: center;
 		justify-content: center;
+		padding: 15px;
 	}
 	.title {
 		margin-right: 0;
@@ -85,7 +98,7 @@
 		display: flex;
 		justify-content: space-around;
 		div {
-			margin-right: 0;
+			margin-right: 10px;
 		}
 	}
 }

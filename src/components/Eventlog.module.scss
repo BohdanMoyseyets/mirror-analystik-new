@@ -15,8 +15,11 @@
 	padding: 29px 0px 0px;
 	margin-bottom: 44px;
 }
+
 .active {
 	border-bottom: 1px solid #f26c4f;
+	user-select: none;
+	cursor: pointer;
 }
 .paging_wrapper {
 	display: flex;
@@ -90,6 +93,12 @@
 	}
 }
 
+@media (max-width: 421px) {
+	.event {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+}
 @media (min-width: 421px) and (max-width: 576px) {
 	.content {
 		flex-direction: row;
@@ -101,6 +110,10 @@
 		.block {
 			width: 300px;
 		}
+	}
+	.event {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 	}
 }
 
